@@ -1,7 +1,7 @@
 function ItemList (){
     return(
-        <div id="" className="">
-            <p>pato</p>
+        <div>
+            <p>Soy una lista de item vacia :D</p>
         </div>
     )
 }

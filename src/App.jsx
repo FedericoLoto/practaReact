@@ -1,24 +1,29 @@
 import React from "react";
-import { BrowserRouter,Route,Routes, } from "react-router-dom";
+import { BrowserRouter,Routes,Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import ItemListContainer from "./components/ItemListContainer";
+import ItemList from "./components/ItemList";
+import Item from "./components/Item";
 import Footer from "./components/Footer";
 import Caja from "./components/Caja";
 
 function App() {
   return (
    <>
-   <p>hola</p>
-    <Navbar/>
-    <ItemListContainer>
+    
+    
+    <BrowserRouter>
+      <Navbar/>
+      <Routes>
+        <Route exact path="/" element={<ItemListContainer/>}/>
+        <Route exact path="/juegos" element={<ItemList/>} />
+        <Route path="/juegos/mario" element={<Item/>} />
+      </Routes>
+      <ItemListContainer>
     <Caja valor="$5500">
     </Caja>
     </ItemListContainer>  
     <Footer/>
-    <BrowserRouter>
-      <Routes>
-        <Route exact path="/" element={<ItemListContainer/>} />
-      </Routes>
     </BrowserRouter>
    </>  
   );
